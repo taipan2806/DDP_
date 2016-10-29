@@ -19,6 +19,16 @@ shinyUI(fluidPage(
   # Application title
   titlePanel("Performance Microsoft Shares"),
   
+  # Section Introduction
+  h3("Getting Started"),
+  p("This application calculates price differences of Microsoft shares between 2 dates and shows its performance in percent. To be able to asses its prices, performance of Nasdaq 100 Index and Apple is displayed too. Both prices are normalized."),  
+  p("If comparison with Nasdaq 100 Index and/or Apple is not desired, they can be hidden by unticking the corresponding checkboxes."),
+  p("To change the date range, select different workdays. Performances will be updated immediately. Note:"),
+  p("- Do NOT select Saturday or Sunday; there are no prices"),
+  p("- 'From' date must be earlier than 'To' date"),
+  # Section Calculation
+  h3("Performance Calculation"),
+  p("Select your dates within September 2016"),
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(

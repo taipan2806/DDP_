@@ -9,9 +9,9 @@ Overview
 The application described in this presentation is part of Coursera's Course "Developing Data Products" by Johns Hopkins University.
 
  
-The application calculates performance of Microsoft shares. Users may compare its performance with Nasdaq 100 Index and Apple shares. The range of calculation is restricted to September 2016 but can be selected by users.
+The application calculates performance of Microsoft shares. Users may compare its performance with Nasdaq 100 Index and Apple shares. The range of calculation is restricted to September 2016 but can be changed by users.
 
-Share Performance Calculator is deployed at <https://taipan2806.shinyapps.io/DDP_Course_Project/>
+Share Performance Calculator is deployed at <https://taipan2806.shinyapps.io/DDP_Course_Project/>. Code is provided at <http://github.com/taipan2806/DDP_Course_Project/>
 
 ========================================================
 Data were downloaded from Yahoo!Finance and stored in file stockprices.csv. All processings base on this data.  
