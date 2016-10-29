@@ -1,0 +1,37 @@
+Share Performance Calculator
+========================================================
+author: taipan2806
+date: 10.28.2016
+autosize: true
+
+Overview
+========================================================
+The application described in this presentation is part of Coursera's Course "Developing Data Products" by Johns Hopkins University.
+
+ 
+The application calculates performance of Microsoft shares. Users may compare its performance with Nasdaq 100 Index and Apple shares. The range of calculation is restricted to September 2016 but can be selected by users.
+
+Share Performance Calculator is deployed at <https://taipan2806.shinyapps.io/DDP_Course_Project/>
+
+========================================================
+Data were downloaded from Yahoo!Finance and stored in file stockprices.csv. All processings base on this data.  
+
+```{r}
+rawData <- read.csv("stockprices.csv", header = TRUE, sep = ";")
+head(rawData)
+```
+
+Code calculation
+========================================================
+Code below shows performance calculation in %.
+```{r eval = FALSE}
+  #Calculation performance in %
+  msPerformance <- reactive({(prices[prices$posixDate == to(), ]$MSFT - prices[prices$posixDate == from(), ]$MSFT) * 100 / prices[prices$posixDate == from(), ]$MSFT})
+  ndxPerformance <- reactive({(prices[prices$posixDate == to(), ]$NDX - prices[prices$posixDate == from(), ]$NDX) * 100 / prices[prices$posixDate == from(), ]$NDX})
+  applePerformance <- reactive({(prices[prices$posixDate == to(), ]$APPL - prices[prices$posixDate == from(), ]$APPL) * 100 / prices[prices$posixDate == from(), ]$APPL})
+```
+
+Output
+========================================================
+
+The output of the application is a plot showing prices within the selected dates and the performance in percent. If checkboxes are ticked, the corresponding information is displayed.
